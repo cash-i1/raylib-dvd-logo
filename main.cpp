@@ -70,7 +70,7 @@ Vector2 set_direction(Logo * dvd) {
 int main() {
     side_hit_amount = 0;
 
-    InitWindow(scr_width,scr_height, "I like poos and wees");
+    InitWindow(scr_width,scr_height, "Raylib DVD Logo");
     InitAudioDevice();
 
     Sound hit_sound = LoadSound("assets/hit_sound.wav");

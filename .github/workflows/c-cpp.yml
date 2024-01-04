@@ -14,10 +14,18 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Install Raylib
+    - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y libraylib-dev
+        sudo apt-get install -y build-essential git
+
+    - name: Download and build Raylib
+      run: |
+        git clone --branch=3.7.0 --depth=1 https://github.com/raysan5/raylib.git
+        cd raylib
+        make -j4
+        sudo make install
+        cd ..
 
     - name: Build
       run: make
